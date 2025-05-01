@@ -7,7 +7,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
 # Load pre-trained models
-health_model = joblib.load("crop_health_model.pkl")  # Scikit-learn model
+health_model = joblib.load("crop_health_model_with_selected_features.pkl")  # Scikit-learn model
 disease_model = load_model("crop_disease_model.keras")  # Keras binary classifier
 
 st.set_page_config(page_title="AgriConnectAI", layout="wide")
