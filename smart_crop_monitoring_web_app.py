@@ -54,45 +54,45 @@ with tab1:
             st.stop()
 
     # Model Prediction
-if st.button("🔍 Predict Crop Health"):
-    label_map = {0: "Healthy", 1: "Moderate", 2: "Stressed"}
-    input_array = np.array([[soil_moisture, nitrogen_level, potassium_level]])
-    prediction = health_model.predict(input_array)[0]
-
-    st.markdown(f"### 🧠 Predicted Crop Health Status: **{prediction}**")
-
-    # --- RULE-BASED RECOMMENDATIONS ---
-    st.markdown("### 🔎 Recommendation Based on Sensor Conditions")
-
-    if prediction == "Healthy":
-        if soil_moisture > 35:
-            st.info("Soil moisture is high, monitor for waterlogging signs.")
-        elif nitrogen_level > 45:
-            st.info("Nitrogen is high, reduce fertilizer to prevent toxicity.")
-        else:
-            st.success("Plant is healthy. Maintain current irrigation and fertilization schedules.")
-
-    elif prediction == "Moderate":
-        if soil_moisture < 20 and nitrogen_level < 20:
-            st.warning("Soil moisture and nitrogen are both low. Recommend watering and applying nitrogen fertilizer.")
-        elif nitrogen_level < 20:
-            st.warning("Low nitrogen. Apply nitrogen-based fertilizer.")
-        elif potassium_level < 20:
-            st.warning("Low potassium. Supplement potassium to improve plant resilience.")
-        else:
-            st.info("Moderate condition. Monitor and adjust irrigation or nutrients accordingly.")
-
-    elif prediction == "Stressed":
-        if soil_moisture < 15 and nitrogen_level < 15 and potassium_level < 15:
-            st.error("Critical deficiency detected. Immediate irrigation and NPK fertilization required.")
-        elif soil_moisture < 15:
-            st.error("Severe drought stress. Irrigate immediately.")
-        elif nitrogen_level < 15:
-            st.error("Severe nitrogen deficiency. Apply urea or ammonium nitrate.")
-        elif potassium_level < 15:
-            st.error("Low potassium. Apply potash fertilizer.")
-        else:
-            st.warning("Plant under stress. Review environmental and soil conditions holistically.")
+    if st.button("🔍 Predict Crop Health"):
+        label_map = {0: "Healthy", 1: "Moderate", 2: "Stressed"}
+        input_array = np.array([[soil_moisture, nitrogen_level, potassium_level]])
+        prediction = health_model.predict(input_array)[0]
+    
+        st.markdown(f"### 🧠 Predicted Crop Health Status: **{prediction}**")
+    
+        # --- RULE-BASED RECOMMENDATIONS ---
+        st.markdown("### 🔎 Recommendation Based on Sensor Conditions")
+    
+        if prediction == "Healthy":
+            if soil_moisture > 35:
+                st.info("Soil moisture is high, monitor for waterlogging signs.")
+            elif nitrogen_level > 45:
+                st.info("Nitrogen is high, reduce fertilizer to prevent toxicity.")
+            else:
+                st.success("Plant is healthy. Maintain current irrigation and fertilization schedules.")
+    
+        elif prediction == "Moderate":
+            if soil_moisture < 20 and nitrogen_level < 20:
+                st.warning("Soil moisture and nitrogen are both low. Recommend watering and applying nitrogen fertilizer.")
+            elif nitrogen_level < 20:
+                st.warning("Low nitrogen. Apply nitrogen-based fertilizer.")
+            elif potassium_level < 20:
+                st.warning("Low potassium. Supplement potassium to improve plant resilience.")
+            else:
+                st.info("Moderate condition. Monitor and adjust irrigation or nutrients accordingly.")
+    
+        elif prediction == "Stressed":
+            if soil_moisture < 15 and nitrogen_level < 15 and potassium_level < 15:
+                st.error("Critical deficiency detected. Immediate irrigation and NPK fertilization required.")
+            elif soil_moisture < 15:
+                st.error("Severe drought stress. Irrigate immediately.")
+            elif nitrogen_level < 15:
+                st.error("Severe nitrogen deficiency. Apply urea or ammonium nitrate.")
+            elif potassium_level < 15:
+                st.error("Low potassium. Apply potash fertilizer.")
+            else:
+                st.warning("Plant under stress. Review environmental and soil conditions holistically.")
 
  
 
