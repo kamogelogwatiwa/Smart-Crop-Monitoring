@@ -11,17 +11,8 @@ from tensorflow.keras.preprocessing import image
 
 # Load pre-trained models
 health_model = joblib.load("crop_health_model.pkl")  # Scikit-learn model
+disease_model = load_model("crop_disease_model.keras")  # Keras binary classifier
 
-# Google Drive .keras model file link
-file_id = "14BSGqUhWIH0Z8S1MjckyZXWU3Hes81km"  
-output_path = "crop_disease_model.keras"
-
-# Download once
-if not os.path.exists(output_path):
-    gdown.download(f"https://drive.google.com/uc?id={file_id}", output_path, quiet=False)
-
-# Load the model
-disease_model = load_model(output_path)
 
 st.set_page_config(page_title="AgriConnectAI", layout="wide")
 st.title("🌾 AgriConnectAI: Smart Crop Monitoring System")
