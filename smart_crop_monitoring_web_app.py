@@ -17,6 +17,7 @@ st.title("🌾 AgriConnectAI: Smart Crop Monitoring System")
 tab1, tab2 = st.tabs(["📊 Crop Health Prediction", "🩺 Crop Disease Detection"])
 
 # -------------------- Crop Health Prediction Tab --------------------
+
 with tab1:
     st.header("📊 Plant Health Prediction")
 
@@ -89,7 +90,7 @@ with tab1:
             st.error("Low potassium. Apply potash fertilizer.")
         else:
             st.warning("Plant under stress. Review environmental and soil conditions holistically.")
-
+"""
 # -------------------- Crop Disease Detection Tab --------------------
 with tab2:
     st.header("🩺 Leaf Disease Detection (Image-Based)")
@@ -115,3 +116,7 @@ with tab2:
             st.warning("⚠️ Disease detected. Isolate affected plant and consider applying treatment.")
         else:
             st.success("✅ Leaf appears healthy. Continue routine monitoring.")
+            """
+
+            
+
