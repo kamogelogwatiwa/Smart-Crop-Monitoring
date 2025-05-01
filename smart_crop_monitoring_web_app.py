@@ -55,6 +55,7 @@ with tab1:
 
     # Model Prediction
 if st.button("🔍 Predict Crop Health"):
+    label_map = {0: "Healthy", 1: "Moderate", 2: "Stressed"}
     input_array = np.array([[soil_moisture, nitrogen_level, potassium_level]])
     prediction = health_model.predict(input_array)[0]
 
