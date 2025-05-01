@@ -54,7 +54,7 @@ with tab1:
             st.stop()
 
     # Model Prediction
-   if st.button("🔍 Predict Crop Health"):
+if st.button("🔍 Predict Crop Health"):
     input_array = np.array([[soil_moisture, nitrogen_level, potassium_level]])
     prediction = health_model.predict(input_array)[0]
 
@@ -92,6 +92,8 @@ with tab1:
             st.error("Low potassium. Apply potash fertilizer.")
         else:
             st.warning("Plant under stress. Review environmental and soil conditions holistically.")
+
+ 
 
 """
 # -------------------- Crop Disease Detection Tab --------------------
