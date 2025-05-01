@@ -3,7 +3,6 @@ import numpy as np
 import requests
 import joblib
 import os
-import gdown
 from PIL import Image
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
