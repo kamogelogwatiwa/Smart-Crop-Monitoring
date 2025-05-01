@@ -56,6 +56,7 @@ with tab1:
     # Model Prediction
     input_array = np.array([[soil_moisture, nitrogen_level, potassium_level]])
     prediction = health_model.predict(input_array)[0]
+    print(input_array)
     st.markdown(f"### 🧠 Predicted Crop Health Status: **{prediction}**")
 
     # --- RULE-BASED RECOMMENDATIONS ---
