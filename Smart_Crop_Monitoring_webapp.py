@@ -8,7 +8,7 @@ from tensorflow.keras.preprocessing import image
 
 # Load pre-trained models
 health_model = joblib.load("crop_health_model.pkl")  # Scikit-learn model
-disease_model = load_model("crop_disease_model.h5")  # Keras binary classifier
+disease_model = load_model("crop_disease_model.keras")  # Keras binary classifier
 
 st.set_page_config(page_title="AgriConnectAI", layout="wide")
 st.title("🌾 AgriConnectAI: Smart Crop Monitoring System")
