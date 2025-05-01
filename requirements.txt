@@ -8,3 +8,4 @@ tensorflow
 Pillow
 joblib
 requests
+gdown
