@@ -125,6 +125,6 @@ with tab2:
         else:
             st.success("✅ Leaf appears healthy. Continue routine monitoring.")
 
-
+"""
             
 
