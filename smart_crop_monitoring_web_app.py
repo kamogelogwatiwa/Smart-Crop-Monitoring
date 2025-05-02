@@ -52,7 +52,7 @@ with tab1:
         except Exception as e:
             st.error(f"Failed to fetch sensor data: {e}")
             st.stop()
-
+"""
     # Model Prediction
     if st.button("🔍 Predict Crop Health"):
         label_map = {0: "Healthy", 1: "Moderate", 2: "Stressed"}
