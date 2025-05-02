@@ -96,7 +96,6 @@ with tab1:
 
  
 
-"""
 # -------------------- Crop Disease Detection Tab --------------------
 with tab2:
     st.header("🩺 Leaf Disease Detection (Image-Based)")
@@ -122,7 +121,7 @@ with tab2:
             st.warning("⚠️ Disease detected. Isolate affected plant and consider applying treatment.")
         else:
             st.success("✅ Leaf appears healthy. Continue routine monitoring.")
-            """
+
 
             
 
